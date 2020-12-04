@@ -19,8 +19,15 @@ input.onButtonPressed(Button.B, function () {
             . # . . .
             `)
         basic.pause(200)
-    } else {
+    } else if (sprite.get(LedSpriteProperty.X) != 3) {
         game.removeLife(1)
+        basic.showLeds(`
+            # . . . #
+            . # . # .
+            . . # . .
+            . # . # .
+            # . . . #
+            `)
     }
 })
 let sprite: game.LedSprite = null

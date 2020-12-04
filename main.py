@@ -20,8 +20,15 @@ def on_button_pressed_b():
             . # . . .
             """)
         basic.pause(200)
-    else:
+    elif not (True):
         game.remove_life(1)
+        basic.show_leds("""
+            # . . . #
+            . # . # .
+            . . # . .
+            . # . # .
+            # . . . #
+            """)
 input.on_button_pressed(Button.B, on_button_pressed_b)
 
 sprite: game.LedSprite = None
