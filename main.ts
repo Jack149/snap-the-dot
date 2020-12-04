@@ -5,6 +5,13 @@ input.onButtonPressed(Button.B, function () {
     if (sprite.get(LedSpriteProperty.X) == 3) {
         game.addScore(1)
         basic.showLeds(`
+            # . # . #
+            . # . # .
+            # . # . #
+            . # . # .
+            # . # . #
+            `)
+        basic.showLeds(`
             . . . . .
             . . . . #
             . . . # .
