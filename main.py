@@ -4,14 +4,6 @@ input.on_button_pressed(Button.A, on_button_pressed_a)
 
 def on_button_pressed_b():
     if sprite.get(LedSpriteProperty.X) == 3:
-        game.add_score(1)
-        basic.show_leds("""
-            # . # . #
-            . # . # .
-            # . # . #
-            . # . # .
-            # . # . #
-            """)
         basic.show_leds("""
             . . . . .
             . . . . #
@@ -19,9 +11,8 @@ def on_button_pressed_b():
             # . # . .
             . # . . .
             """)
-        basic.pause(200)
-    elif not (True):
-        game.remove_life(1)
+        game.add_score(1)
+    elif sprite.get(LedSpriteProperty.X) != 3:
         basic.show_leds("""
             # . . . #
             . # . # .
@@ -29,6 +20,7 @@ def on_button_pressed_b():
             . # . # .
             # . . . #
             """)
+        game.remove_life(1)
 input.on_button_pressed(Button.B, on_button_pressed_b)
 
 sprite: game.LedSprite = None

@@ -3,14 +3,6 @@ input.onButtonPressed(Button.A, function () {
 })
 input.onButtonPressed(Button.B, function () {
     if (sprite.get(LedSpriteProperty.X) == 3) {
-        game.addScore(1)
-        basic.showLeds(`
-            # . # . #
-            . # . # .
-            # . # . #
-            . # . # .
-            # . # . #
-            `)
         basic.showLeds(`
             . . . . .
             . . . . #
@@ -18,9 +10,8 @@ input.onButtonPressed(Button.B, function () {
             # . # . .
             . # . . .
             `)
-        basic.pause(200)
+        game.addScore(1)
     } else if (sprite.get(LedSpriteProperty.X) != 3) {
-        game.removeLife(1)
         basic.showLeds(`
             # . . . #
             . # . # .
@@ -28,6 +19,7 @@ input.onButtonPressed(Button.B, function () {
             . # . # .
             # . . . #
             `)
+        game.removeLife(1)
     }
 })
 let sprite: game.LedSprite = null
